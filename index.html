@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Bán Hàng</title>
+    <style>
+        /* Thiết lập kiểu chữ, màu nền và kích thước tổng thể */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Phần đầu trang, chứa thông tin cửa hàng */
+        .header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            margin: 5px 0;
+        }
+
+        /* Chia các sản phẩm thành một lưới */
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            position: relative;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .product-info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            opacity: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .product:hover .product-info {
+            opacity: 1;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-info h3, .product-info p {
+            margin: 5px 0;
+        }
+
+        /* Footer chứa thông tin cửa hàng */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Media queries - Cải thiện giao diện trên các màn hình nhỏ */
+        @media (max-width: 1024px) {
+            .product-container {
+                grid-template-columns: repeat(3, 1fr); /* Giảm cột thành 3 khi màn hình nhỏ hơn 1024px */
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: repeat(2, 1fr); /* Giảm cột thành 2 khi màn hình nhỏ hơn 768px */
+            }
+
+            .header h1 {
+                font-size: 1.4rem;
+            }
+
+            .header p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-container {
+                grid-template-columns: 1fr; /* Chỉ hiển thị 1 cột trên điện thoại */
+            }
+
+            .header h1 {
+                font-size: 1.2rem;
+            }
+
+            .header p {
+                font-size: 0.8rem;
+            }
+
+            .footer {
+                font-size: 0.8rem;
+            }
+
+            .product-info h3 {
+                font-size: 1rem;
+            }
+
+            .product-info p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Phần đầu trang -->
+    <div class="header">
+        <h1>Nhận Chụp Hình Thẻ Giá Rẻ</h1>
+        <p>Chúng tôi cung cấp các sản phẩm chất lượng với giá cả hợp lý.</p>
+    </div>
+
+    <!-- Phần hiển thị sản phẩm -->
+    <div class="product-container">
+        <!-- Sản phẩm 1 -->
+        <div class="product">
+            <img src="img/dienthoai.jpg" alt="Sản phẩm 1">
+            <div class="product-info">
+                <h3>PHẠM THIỆN TÂM </h3>
+                <p>Giá: 999.999.999 VND</p>
+            </div>
+        </div>
+        <!-- Sản phẩm 2 -->
+        <div class="product">
+            <img src="img/laptop.jpg" alt="Sản phẩm 2">
+            <div class="product-info">
+                <h3>PHÙNG VĂN KIỆT</h3>
+                <p>Giá: 999.999.999 VND</p>
+            </div>
+        </div>
+        <!-- Sản phẩm 3 -->
+        <div class="product">
+            <img src="img/maytinhban.jpg" alt="Sản phẩm 3">
+            <div class="product-info">
+                <h3>PHẠM THIỆN TÂM</h3>
+                <p>Giá: 999.999.999 VND</p>
+            </div>
+        </div>
+        <!-- Sản phẩm 4 -->
+        <div class="product">
+            <img src="img/pc.jpg" alt="Sản phẩm 4">
+            <div class="product-info">
+                <h3>NGUYỄN NGÔ QUANG THỨC</h3>
+                <p>Giá: 999.999.999 VND</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer với thông tin cửa hàng -->
+    <div class="footer">
+        <p>Địa chỉ cửa hàng: 85 Săm Băm , Buôn Mê Thuộc</p>
+        <p>Liên hệ: 85sambram@gmail.com | 0345 678 789</p>
+    </div>
+
+</body>
+</html>
